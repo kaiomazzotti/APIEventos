@@ -1,4 +1,5 @@
-﻿using System;
+﻿using APIEventos.Service.Entity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,9 @@ namespace APIEventos.Service.Interface
 {
     public interface IEventReservationRepository
     {
+        public Task<bool> InserirReserva(EventReservationEntity eventReservation);
+        public Task<bool> EditarQuantidadeReserva(int numero, long idReservation);
+        public Task<List<EventReservationEntity>> ConsultaPersonTitle(string nome, string tituloEvento);
+        public Task<bool> Deletar(long id);
     }
 }
